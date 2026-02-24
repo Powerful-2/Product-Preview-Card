@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green-500: hsl(158, 36%, 37%);
+    --green-700: hsl(158, 42%, 18%);
+    --black: hsl(212, 21%, 14%);
+    --grey: hsl(228, 12%, 48%);
+    --cream: hsl(30, 38%, 92%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cream);
+    display: flex;
+    flex-direction: column; 
+    font-size: 14px;
+    align-items: center; 
+    min-height: 100vh;
+    justify-content: center; 
+    margin: 0;
+    position: relative;
+    border-radius: 0px;
+    padding: 40px 0; /* Adds space so card never touches screen edges */
+    width: 100%;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    min-height: 611px;
+    justify-content: flex-start;
+    height: auto;
+    align-items: center;
+    background: #FFFFFF;
+    align-items: center; /* Centers children horizontally */
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 28px auto;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-image{
+    width: 350px;
+    height: 342px;
+    background-image: url('images/image-product-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+    flex: none;
+    order: 0; /* Make sure it stays at the very top */
+    align-self: stretch; /* Fills the width of the card exactly */
+    flex-grow: 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-image img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    background: #FFFFFF;
+    align-self: stretch;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 100%;
+    height: auto;
+    background: #FFFFFF;
+    align-self: stretch;
+}
+
+.category-label{
+    width: 100%;
+    height: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    display: flex;
+    /* justify-content: center; */
+    text-align: center;
+    align-items: center;
+    letter-spacing: 5px;
+    color: #6C7289;
+    flex: none;
+    order: 0;
+    margin: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.product-title{
+    width: 100%;
+    height: auto;
+    font-family: 'Fraunces'; /* Elegant serif font */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    color: #1C232B;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0;
+}
+
+.description{
+    width: 100%;
+    height: auto;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    color: #6C7289;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.price-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    width: 191px;
+    height: 32px;
+    flex: none;
+    flex-grow: 0;
+}
+
+.current-price{
+    width: 127px;
+    height: 32px;
+    font-family: 'Fraunces', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    color: #3D8168;
+    display: flex;
+    align-items: center;
+    flex: none;
+    flex-grow: 0;
+    margin: 0;
+}
+
+.old-price{
+    width: 48px;
+    height: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 120%;
+    text-decoration-line: line-through;
+    color: #6C7289;
+    display: flex;
+    align-items: center; /* Vertical alignment with the current price */
+    flex: none;
+    margin: 0;
+}
+
+.add-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    gap: 8px;
+    width: 100%;
+    height: 50px;
+    background: #3D8168;
+    border-radius: 8px;
+    border: none;
+   /*  cursor: pointer; */
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* .add-btn:hover{
+    background: #1A4032; 
+} */
+
+.add-btn img{
+    width: 18px;
+    height: 18px;
+    flex: none;
+    flex-grow: 0;
+    display: block;
+    filter: brightness(0) invert(1); /* Forces a black SVG to turn white */
+}
+
+@media (min-width: 600px){
+    body{
+        /* Layout: Ensure the card stays perfectly centered on desktop */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%;
+        margin: 0;
+        background-color: #F2EAE2;
+        position: relative;
+    }
+
+    .card-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        width: 600px;
+        height: 456px;
+        margin: 0 auto;
+        background: #FFFFFF;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-image,
+    .card-content {
+        flex: 1;
+        height: 100% !important; /* Force it to fill the 450px card height */
+        width: 50%;
+    }
+
+    .card-image{
+        width: 300px;
+        height: 456px;
+        background-image: url('images/image-product-desktop.jpg');
+        background-size: cover;
+        background-position: center;
+        flex: none;
+        order: 0; /* Keeps image on the left */
+        align-self: stretch;
+        flex-grow: 0;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        content: url('./images/image-product-desktop.jpg');
+    }
+
+    .card-content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center; /* Vertically centers the text in the 456px height */
+        padding: 32px;
+        gap: 32px; /* Increased vertical space for desktop */
+        width: 300px; /* Exactly half of the 600px card */
+        height: 456px; /* Matches the image height */
+        box-sizing: border-box;
+        background: #FFFFFF;
+    }
+
+    .title-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center; /* This pulls the text into the center of the 246px height */
+        padding: 0px;
+        gap: 24px;
+        width: 200px;
+        height: auto;
+        min-height: 246px;
+        flex: none;
+        background: #FFFFFF;
+    }
+
+    .category-label{
+        width: 236px;
+        height: 14px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;/* or 14px */
+        letter-spacing: 5px;
+        color: #6C7289;
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+        margin: 0;
+    }
+
+    .product-title{
+        width: 100%;
+        height: auto;
+        font-family: 'Fraunces', serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 1;
+        color: #1C232B;
+        flex: none;
+        align-self: stretch;
+        display: block;
+        align-items: center;
+        margin: 0;
+    }
+
+    .description{
+        width: 236px;
+        height: auto;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 160%; /* or 22px */
+        color: #6C7289;
+        flex: none;
+        order: 2;
+        align-self: stretch;
+        flex-grow: 0;
+        margin: 0;
+    }
+
+    .price-wrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 16px;
+        width: 191px;
+        height: 32px;
+        flex: none;
+        margin: 0;
+        flex-grow: 0;
+    }
+
+    .current-price{
+        width: 127px;
+        height: 32px;
+        font-family: 'Fraunces', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 100%; /* identical to box height, or 32px */
+        color: #3D8168; /* The Signature Dark Cyan */
+        align-items: center; /* Keeps the numbers centered in the 32px box */
+        flex: none;
+        margin: 0;
+    }
+
+    .old-price{
+        width: 48px;
+        height: 16px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        color: #6C7289;
+        text-decoration-line: line-through;
+        line-height: 120%;
+        flex: none;
+        margin: 0;
+    }
+
+    .add-btn{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 32px;
+        gap: 8px;
+        width: 100%;
+        height: 50px;
+        background: #3D8168;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .add-btn:hover{
+        background: #1A4032; 
+    }
+
+    .add-btn img{
+        width: 18px;
+        height: 18px;
+        flex: none;
+        flex-grow: 0;
+        display: block;
+        object-fit: contain; /* Keeps the icon from stretching */
+
+        /* Ensure it's white to match the design */
+        filter: brightness(0) invert(1);
+    }
+
+    .add-btn span{
+        width: 85px;
+        height: 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700; /* Bold weight for the premium look */
+        font-size: 14px;
+        line-height: 110%;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        flex: none;
+        flex-grow: 0;
+    }
+
+    footer {
+        /* Position at the very bottom of the screen */
+        width: 100%;
+        padding: 20px 0;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .attribution {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11px;
+        text-align: center;
+        color: #6C7289;
+     }
+
+    .attribution a {
+        color: #3D8168; /* Using your "Luxury Green" for the links */
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease;
+    }
+    
+    .attribution a:hover {
+        color: #1A4032; /* Darker green on hover */
+        text-decoration: underline;
+    }
+}
